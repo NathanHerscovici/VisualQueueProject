@@ -6,12 +6,15 @@
         xmlns:local="clr-namespace:VisualQueueProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key = "MyBoolToVisibilityConverter" />
+    </Window.Resources>
     <Grid>
-        <TextBox x:Name="uxTitle" HorizontalAlignment="Left" Margin="86,4,0,0" Text="Enter the title of the event.." TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="24"/>
+        <TextBox x:Name="uxTitle" HorizontalAlignment="Left" Margin="86,4,0,0" Text="Enter the title of the event.." TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="24" LostFocus="uxTitle_LostFocus" GotFocus="uxTitle_GotFocus"/> <!-- Foreground="LightSteelBlue" Visibility="{Binding ElementName=txtSearchBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" IsHitTestVisible="False" /> -->
         <Label x:Name="uxTitleLabel" Content="Title" Margin="0,0,714,403"/>
         <Label x:Name="uxDescriptionLabel" Content="Description" Margin="0,31,714,372"/>
         <Label x:Name="uxTitleLabel_Copy" Content="Title" Margin="0,0,714,403"/>
-        <TextBox x:Name="uxDescription" HorizontalAlignment="Left" Margin="86,36,0,0" Text="Enter the decription of the event.." TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="24"/>
+        <TextBox x:Name="uxDescription" HorizontalAlignment="Left" Margin="86,36,0,0" Text="Enter the description of the event.." TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="24" LostFocus="uxDescription_LostFocus" GotFocus="uxTitle_GotFocus"/>
         <Button x:Name="uxSaveButton" Content="Save Event" Margin="92,81,592,311" Click="uxSaveButton_Click"/>
         <StackPanel x:Name="uxStackPanel" Margin="370,0,0,0" VerticalAlignment="Bottom"/>
 
